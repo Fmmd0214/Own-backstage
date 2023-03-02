@@ -1,22 +1,5 @@
 <template>
-    <n-page-header subtitle="让你的听觉更懂视觉" @back="handleBack">
-      <n-grid :cols="5">
-        <n-gi>
-          <n-statistic label="正片" value="125 集" />
-        </n-gi>
-        <n-gi>
-          <n-statistic label="嘉宾" value="22 位" />
-        </n-gi>
-        <n-gi>
-          <n-statistic label="道歉" value="36 次" />
-        </n-gi>
-        <n-gi>
-          <n-statistic label="话题" value="83 个" />
-        </n-gi>
-        <n-gi>
-          <n-statistic label="参考链接" value="2,346 个" />
-        </n-gi>
-      </n-grid>
+    <n-page-header subtitle="让你的听觉更懂视觉">
       <template #title>
         <a
           href="https://anyway.fm/"
@@ -24,12 +7,7 @@
         >Anyway.FM</a>
       </template>
       <template #header>
-        <n-breadcrumb>
-          <n-breadcrumb-item>播客</n-breadcrumb-item>
-          <n-breadcrumb-item>精选</n-breadcrumb-item>
-          <n-breadcrumb-item>超级精选</n-breadcrumb-item>
-          <n-breadcrumb-item>Anyway.FM</n-breadcrumb-item>
-        </n-breadcrumb>
+        
       </template>
       <template #avatar>
         <n-avatar
@@ -47,12 +25,19 @@
         </n-space>
       </template>
       <template #footer>
-        截止到 2021 年 4 月 3 日
+        <!-- <n-breadcrumb>
+          <n-breadcrumb-item>播客</n-breadcrumb-item>
+          <n-breadcrumb-item>精选</n-breadcrumb-item>
+          <n-breadcrumb-item>超级精选</n-breadcrumb-item>
+          <n-breadcrumb-item>Anyway.FM</n-breadcrumb-item>
+        </n-breadcrumb> -->
+		<Bread></Bread>
       </template>
     </n-page-header>
   </template>
   
   <script lang="ts">
+  import Bread from './Breadcrumb.vue'
   import { defineComponent } from 'vue'
   import { useMessage } from 'naive-ui'
   
@@ -60,22 +45,18 @@
     setup () {
     //   const message = useMessage()
       return {
-        handleBack () {
-        //   message.info('[onBack]')
-        },
+		compontents: {
+			Bread
+		},
         options: [
           {
-            label: '催更',
+            label: '退出登陆',
             key: '1'
           },
           {
-            label: '催更',
+            label: '个人用户中心',
             key: '2'
           },
-          {
-            label: '催更',
-            key: '3'
-          }
         ]
       }
     }

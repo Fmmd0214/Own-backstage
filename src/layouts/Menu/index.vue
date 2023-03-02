@@ -20,7 +20,6 @@ import {
   HomeOutline as HomeIcon
 } from '@vicons/ionicons5'
 
-const message = inject("message");
 
 function renderIcon (icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) })
@@ -138,12 +137,14 @@ const menuOptions: MenuOption[] = [
 
 export default defineComponent({
   setup () {
-    // const message = message()
+    // const messageL = message()
+    const message:any = inject("message");
+
     return {
       menuOptions,
       handleUpdateValue (key: string, item: MenuOption) {
-        // message.info('[onUpdate:value]: ' + JSON.stringify(key))
-        // message.info('[onUpdate:value]: ' + JSON.stringify(item))
+        message.info('[onUpdate:value]: ' + JSON.stringify(key))
+        message.info('[onUpdate:value]: ' + JSON.stringify(item))
       }
     }
   }
