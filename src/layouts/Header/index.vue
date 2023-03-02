@@ -42,12 +42,13 @@
   import { useMessage } from 'naive-ui'
   
   export default defineComponent({
+    components: {
+			Bread
+		},
     setup () {
     //   const message = useMessage()
       return {
-		compontents: {
-			Bread
-		},
+		
         options: [
           {
             label: '退出登陆',
